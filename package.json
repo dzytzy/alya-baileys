@@ -71,6 +71,9 @@
             "import": "./lib/Telegram/index.mjs",
             "require": "./lib/Telegram/index.js"
         },
+        "./src/*": "./src/*",
+        "./lib/*": "./lib/*",
+        "./*": "./*",
         "./package.json": "./package.json"
     },
     "directories": {
