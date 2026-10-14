@@ -1,0 +1,21 @@
+'use strict';
+
+const baileys = require('./lib/index.js');
+
+module.exports = baileys;
+
+// Support Libsignal Drop-In resolution
+try {
+    exports.crypto = require('./src/crypto');
+    exports.curve = require('./src/curve');
+    exports.keyhelper = require('./src/keyhelper');
+    exports.ProtocolAddress = require('./src/protocol_address');
+    exports.SessionBuilder = require('./src/session_builder');
+    exports.SessionCipher = require('./src/session_cipher');
+    exports.SessionRecord = require('./src/session_record');
+    Object.assign(exports, require('./src/errors'));
+} catch (e) {
+    // libsignal sub-exports fallback
+}
+
+Object.assign(module.exports, exports);
