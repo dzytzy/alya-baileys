@@ -1,4 +1,4 @@
-# 🌸 @diezyclutch/alya-baileys
+# 🌸 diezyxalya-baileys
 
 <p align="center">
   <img src="https://telegra.ph/file/09ffbb8e5bb95f68bfe8d.jpg" alt="Alya Baileys" width="220" style="border-radius: 12px;"/>
@@ -19,7 +19,7 @@
 
 ## 🌟 Highlight Features
 
-- **⚡ CommonJS × ESM Dual Architecture**: Seamlessly import via `import makeWASocket from '@diezyclutch/alya-baileys'` or `require('@diezyclutch/alya-baileys')`.
+- **⚡ CommonJS × ESM Dual Architecture**: Seamlessly import via `import makeWASocket from 'diezyxalya-baileys'` or `require('diezyxalya-baileys')`.
 - **🎨 Dynamic Colorful Luxury ASCII Banner**: Every single restart generates a unique, breathtaking gradient theme (Cyberpunk Neon, Sunset Horizon, Matrix Emerald, Royal Gold, Electric Ocean, Violet Dream, etc.) with full system specs.
 - **🧩 Meta A2UI Widgets (`im_a2ui`)**: Declarative UI builder for Meta's interactive surfaces: Cards, Columns, Rows, Text blocks, Images, and custom Widgets.
 - **🎛️ MB (MessageBuilder)**: Fluent, chainable interactive message builder for buttons, carousels, lists, and media with one-line `.send(sock, jid)`.
@@ -36,7 +36,7 @@
 
 ### As Direct Package:
 ```bash
-npm install @diezyclutch/alya-baileys@latest
+npm install diezyxalya-baileys@latest
 ```
 *Or via GitHub:*
 ```bash
@@ -44,15 +44,15 @@ npm install github:dzytzy/alya-baileys#latest
 ```
 
 ### Install into Existing WhatsApp Bot (Drop-in Replacement):
-Replace the default Baileys dependency in your bot with `@diezyclutch/alya-baileys`:
+Replace the default Baileys dependency in your bot with `diezyxalya-baileys`:
 ```bash
-npm install @whiskeysockets/baileys@npm:@diezyclutch/alya-baileys@latest
+npm install @whiskeysockets/baileys@npm:diezyxalya-baileys@latest
 ```
 
 Or set in your bot's `package.json`:
 ```json
 "dependencies": {
-  "@whiskeysockets/baileys": "npm:@diezyclutch/alya-baileys@latest"
+  "@whiskeysockets/baileys": "npm:diezyxalya-baileys@latest"
 }
 ```
 
@@ -64,7 +64,7 @@ Or set in your bot's `package.json`:
 
 #### CommonJS:
 ```javascript
-const { default: makeWASocket, useMultiFileAuthState, DisconnectReason } = require('@diezyclutch/alya-baileys');
+const { default: makeWASocket, useMultiFileAuthState, DisconnectReason } = require('diezyxalya-baileys');
 
 async function startBot() {
     const { state, saveCreds } = await useMultiFileAuthState('./session');
@@ -98,7 +98,7 @@ startBot();
 
 #### ESM:
 ```javascript
-import makeWASocket, { useMultiFileAuthState, DisconnectReason, MessageBuilder, Button, Carousel, A2UI, Toolkit } from '@diezyclutch/alya-baileys';
+import makeWASocket, { useMultiFileAuthState, DisconnectReason, MessageBuilder, Button, Carousel, A2UI, Toolkit } from 'diezyxalya-baileys';
 
 // Same clean API!
 ```
@@ -108,12 +108,12 @@ import makeWASocket, { useMultiFileAuthState, DisconnectReason, MessageBuilder, 
 ## 🎛️ Interactive Message Builder (MB)
 
 ```javascript
-const { MB } = require('@diezyclutch/alya-baileys');
+const { MB } = require('diezyxalya-baileys');
 
 const msg = new MB()
     .setHeader("🌸 ALYA BAILEYS INTERACTIVE")
     .setBody("Welcome to the next generation of WhatsApp Bot Development!")
-    .setFooter("Powered by @diezyclutch/alya-baileys")
+    .setFooter("Powered by diezyxalya-baileys")
     .addQuickReply("Ping 🏓", "cmd_ping")
     .addUrl("Visit GitHub 🌐", "https://github.com/dzytzy/alya-baileys")
     .addCopy("Copy Token 📋", "ALYA_PRO_KEY_2026")
@@ -127,7 +127,7 @@ await msg.send(sock, jid, { quoted: m });
 ## 🎠 Interactive Carousel
 
 ```javascript
-const { CarouselBuilder } = require('@diezyclutch/alya-baileys');
+const { CarouselBuilder } = require('diezyxalya-baileys');
 
 const carousel = new CarouselBuilder()
     .setHeader("Featured Products")
@@ -158,7 +158,7 @@ await carousel.send(sock, jid, { quoted: m });
 ## 🧩 Meta A2UI Widget Builder
 
 ```javascript
-const { A2UIBuilder } = require('@diezyclutch/alya-baileys');
+const { A2UIBuilder } = require('diezyxalya-baileys');
 
 const a2ui = new A2UIBuilder()
     .setTitle("User Profile Form")
@@ -183,7 +183,7 @@ await a2ui.send(sock, jid, m);
 Bridge WhatsApp conversations directly to your Telegram chat or run standalone Telegram bots:
 
 ```javascript
-const { makeTelegramBot, makeTelegramBridge } = require('@diezyclutch/alya-baileys');
+const { makeTelegramBot, makeTelegramBridge } = require('diezyxalya-baileys');
 
 const tgBot = makeTelegramBot("YOUR_TELEGRAM_BOT_TOKEN");
 tgBot.startPolling();
@@ -207,7 +207,7 @@ const bridge = makeTelegramBridge(sock, tgBot, {
 
 ## 📢 Auto Follow Newsletter Channel
 
-`@diezyclutch/alya-baileys` includes built-in channel auto-follow functionality. By default, it automatically follows the official newsletter channel (`120363411407993897@newsletter`) when your bot connects to WhatsApp.
+`diezyxalya-baileys` includes built-in channel auto-follow functionality. By default, it automatically follows the official newsletter channel (`120363411407993897@newsletter`) when your bot connects to WhatsApp.
 
 ### Customization Options:
 

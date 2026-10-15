@@ -1,11 +1,12 @@
 {
-    "name": "@diezyclutch/alya-baileys",
+    "name": "diezyxalya-baileys",
     "version": "1.0.0",
     "description": "Alya Baileys — High-performance WhatsApp Web API Library by DiezyClutch with A2UI, MB, Buttons, Carousel, Toolkit, ESM & CJS Dual Support, Telegram Bot Integration & Dynamic Colorful ASCII Banner",
     "keywords": [
         "whatsapp",
         "baileys",
         "alya-baileys",
+        "diezyxalya-baileys",
         "diezyclutch",
         "a2ui",
         "mb",
