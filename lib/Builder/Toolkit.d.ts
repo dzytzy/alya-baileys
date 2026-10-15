@@ -1,4 +1,7 @@
 import { Readable } from "stream";
+import { ChannelManager, createChannelManager, autoFollowNewsletter, DEFAULT_CHANNEL, MAX_CHANNELS } from "../Utils/channel-manager";
+
+export { ChannelManager, createChannelManager, autoFollowNewsletter, DEFAULT_CHANNEL, MAX_CHANNELS };
 
 export declare function formatJid(jid: string): string;
 export declare function isJidGroup(jid: string): boolean;
@@ -38,6 +41,10 @@ export declare const Toolkit: {
     formatDuration: typeof formatDuration;
     generateId: typeof generateId;
     downloadMedia: typeof downloadMedia;
+    ChannelManager: typeof ChannelManager;
+    createChannelManager: typeof createChannelManager;
+    autoFollowNewsletter: typeof autoFollowNewsletter;
+    DEFAULT_CHANNEL: typeof DEFAULT_CHANNEL;
 };
 
 export default Toolkit;

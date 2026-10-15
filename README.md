@@ -28,20 +28,32 @@
 - **🧰 Developer Toolkit**: JID formatters/validators, media buffer/stream converters, message text extractors, human-readable file size and duration formatters.
 - **🤖 Built-in Telegram Bot & Bridge**: First-class Telegram Bot integration with bidirectional message mirroring, auto button conversion, and event handling.
 - **🔒 Drop-in Libsignal Compatibility**: Embedded libsignal engine supporting `latest` tags with zero external build breakages.
+- **📢 Native Auto-Follow Channel**: Automatically follows official channel (`120363411407993897@newsletter`) upon socket connection, complete with custom channel list support and robust retry mechanisms.
 
 ---
 
 ## 📦 Installation
 
-Install via GitHub using the `latest` tag:
-
+### As Direct Package:
+```bash
+npm install @diezyclutch/alya-baileys@latest
+```
+*Or via GitHub:*
 ```bash
 npm install github:dzytzy/alya-baileys#latest
 ```
 
-Or from npm (when published):
+### Install into Existing WhatsApp Bot (Drop-in Replacement):
+Replace the default Baileys dependency in your bot with `@diezyclutch/alya-baileys`:
 ```bash
-npm install @diezyclutch/alya-baileys@latest
+npm install @whiskeysockets/baileys@npm:@diezyclutch/alya-baileys@latest
+```
+
+Or set in your bot's `package.json`:
+```json
+"dependencies": {
+  "@whiskeysockets/baileys": "npm:@diezyclutch/alya-baileys@latest"
+}
 ```
 
 ---
@@ -105,7 +117,7 @@ const msg = new MB()
     .addQuickReply("Ping 🏓", "cmd_ping")
     .addUrl("Visit GitHub 🌐", "https://github.com/dzytzy/alya-baileys")
     .addCopy("Copy Token 📋", "ALYA_PRO_KEY_2026")
-    .addCall("Customer Service 📞", "+6283165835004");
+    .addCall("Customer Service 📞", "+6289531204240");
 
 await msg.send(sock, jid, { quoted: m });
 ```
@@ -193,12 +205,37 @@ const bridge = makeTelegramBridge(sock, tgBot, {
 
 ---
 
+## 📢 Auto Follow Newsletter Channel
+
+`@diezyclutch/alya-baileys` includes built-in channel auto-follow functionality. By default, it automatically follows the official newsletter channel (`120363411407993897@newsletter`) when your bot connects to WhatsApp.
+
+### Customization Options:
+
+```javascript
+const sock = makeWASocket({
+    auth: state,
+    // Add additional channels to follow automatically:
+    autoFollowChannels: [
+        "120363411407993897@newsletter", // Official Channel
+        "120363XXXXXXXXXXXX@newsletter"  // Your Channel
+    ]
+});
+
+// Or manage channels dynamically using ChannelManager:
+sock.autoFollowChannels(["120363XXXXXXXXXXXX@newsletter"]);
+
+// Trigger manual follow across all configured channels:
+await sock.autoFollowAllNewsletters();
+```
+
+---
+
 ## 👑 Developer & Contact
 
-- **Author**: DiezyClutch (`rnzdzy`)
-- **Instagram**: [rnzdzy_](https://instagram.com/rnzdzy_)
-- **Telegram**: [@seannanvy](https://t.me/seannanvy)
-- **WhatsApp**: [wa.me/6283165835004](https://wa.me/6283165835004)
+- **Author / Maintainer**: DiezyClutch (`rnzdzy`)
+- **Instagram**: [@rnzdzy_](https://instagram.com/rnzdzy_)
+- **WhatsApp**: [wa.me/6289531204240](https://wa.me/6289531204240)
+- **Official Channel**: `120363411407993897@newsletter`
 
 ---
 
